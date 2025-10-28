@@ -24,9 +24,9 @@ public class AestheticStairs
     public static final String MOD_ID = "aestheticstairs";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public AestheticStairs(FMLJavaModLoadingContext context)
+    public AestheticStairs()
     {
-        IEventBus modEventBus = context.getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
 
@@ -35,8 +35,6 @@ public class AestheticStairs
         ModBlocks.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

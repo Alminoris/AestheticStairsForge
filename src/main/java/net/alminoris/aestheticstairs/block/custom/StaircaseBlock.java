@@ -9,6 +9,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -154,7 +155,7 @@ public class StaircaseBlock extends YAxisRotatedBlock
                 return InteractionResult.SUCCESS;
             }
 
-            if (currentRailed && stack.is(Tags.Items.TOOLS_AXES))
+            if (currentRailed && stack.getItem() instanceof AxeItem)
             {
                 if (stack.getDamageValue() < stack.getMaxDamage() - 1)
                     stack.setDamageValue(stack.getDamageValue() + 1);

@@ -3,6 +3,7 @@ package net.alminoris.aestheticstairs.item;
 import net.alminoris.aestheticstairs.AestheticStairs;
 import net.alminoris.aestheticstairs.block.ModBlocks;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -40,7 +41,7 @@ public class ModItemGroups
 
         @Override
         public Component getDisplayName() {
-            return Component.translatable("itemGroup." + AestheticStairs.MOD_ID + ".astairstab");
+            return new TranslatableComponent("itemGroup." + AestheticStairs.MOD_ID + ".astairstab");
         }
     };
 
