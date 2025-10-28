@@ -7,8 +7,8 @@ import net.alminoris.aestheticstairs.util.helper.ModJsonHelper;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -21,13 +21,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
     private static final Dictionary<String, Block> SECONDARY_STONES = new Hashtable<>()
     {{
         put("stone", Blocks.COBBLESTONE);
-        put("tuff", Blocks.POLISHED_TUFF);
+        put("tuff", Blocks.TUFF);
         put("blackstone", Blocks.POLISHED_BLACKSTONE);
         put("andesite", Blocks.POLISHED_ANDESITE);
         put("diorite", Blocks.POLISHED_DIORITE);
@@ -41,13 +42,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         put("sandstone", Blocks.SANDSTONE);
     }};
     
-    public ModRecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries)
+    public ModRecipeProvider(PackOutput pOutput)
     {
-        super(pOutput, pRegistries);
+        super(pOutput);
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput recipeExporter)
+    protected void buildRecipes(Consumer<FinishedRecipe> recipeExporter)
     {
         for(String name : BlockSetsHelper.STONES)
         {

@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -119,7 +120,7 @@ public class StaircaseBlock extends YAxisRotatedBlock
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit)
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
     {
         Variant currentVariant = state.getValue(VARIANT);
         boolean currentRailed = state.getValue(RAILED);
@@ -174,7 +175,7 @@ public class StaircaseBlock extends YAxisRotatedBlock
                 return InteractionResult.SUCCESS;
             }
         }
-        return super.useWithoutItem(state, world, pos, player, hit);
+        return super.use(state, world, pos, player, hand, hit);
     }
 
     @Override
@@ -260,7 +261,7 @@ public class StaircaseBlock extends YAxisRotatedBlock
     }
 
     @Override
-    protected void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify)
+    public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify)
     {
         super.onPlace(state, world, pos, oldState, notify);
 

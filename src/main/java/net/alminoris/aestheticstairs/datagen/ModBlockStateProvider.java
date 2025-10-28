@@ -20,7 +20,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private static final Dictionary<String, String> SECONDARY_STONES = new Hashtable<>()
     {{
         put("stone", "cobblestone");
-        put("tuff", "polished_tuff");
+        put("tuff", "tuff");
         put("blackstone", "polished_blackstone");
         put("andesite", "polished_andesite");
         put("diorite", "polished_diorite");

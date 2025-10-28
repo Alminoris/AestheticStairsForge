@@ -161,7 +161,7 @@ public class StairailBlock extends YAxisRotatedBlock
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos)
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos)
     {
         return updateStairailVariant(world, state, pos);
     }

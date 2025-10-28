@@ -29,13 +29,13 @@ public class ModBlocks
         for(String name : BlockSetsHelper.getWoods())
         {
             put(name, registerBlock("small_stairs_"+name,
-                    () -> new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion())));
+                    () -> new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion())));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
             put(name, registerBlock("small_stairs_"+name,
-                    () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion())));
+                    () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion())));
         }
     }};
 
@@ -44,13 +44,13 @@ public class ModBlocks
         for(String name : BlockSetsHelper.getWoods())
         {
             put(name, registerBlock("small_halfstairs_"+name,
-                    () -> new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion())));
+                    () -> new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion())));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
             put(name, registerBlock("small_halfstairs_"+name,
-                    () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion())));
+                    () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion())));
         }
     }};
 
@@ -58,12 +58,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), name, "staircase_"+name)));
+            put(name, registerBlock("staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS), name, "staircase_"+name)));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), name, "staircase_"+name)));
+            put(name, registerBlock("staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.copy(Blocks.STONE), name, "staircase_"+name)));
         }
     }};
 
@@ -71,12 +71,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("small_staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), name, "small_staircase_"+name)));
+            put(name, registerBlock("small_staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS), name, "small_staircase_"+name)));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("small_staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), name, "small_staircase_"+name)));
+            put(name, registerBlock("small_staircase_"+name, () -> new StaircaseBlock(BlockBehaviour.Properties.copy(Blocks.STONE), name, "small_staircase_"+name)));
         }
     }};
 
@@ -84,12 +84,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), "stairail_"+name)));
+            put(name, registerBlock("stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS), "stairail_"+name)));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), "stairail_"+name)));
+            put(name, registerBlock("stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.copy(Blocks.STONE), "stairail_"+name)));
         }
     }};
 
@@ -97,12 +97,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("small_stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS), "small_stairail"+name)));
+            put(name, registerBlock("small_stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS), "small_stairail"+name)));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("small_stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), "small_stairail"+name)));
+            put(name, registerBlock("small_stairail_"+name, () -> new StairailBlock(BlockBehaviour.Properties.copy(Blocks.STONE), "small_stairail"+name)));
         }
     }};
 
