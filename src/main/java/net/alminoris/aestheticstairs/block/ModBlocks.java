@@ -3,6 +3,7 @@ package net.alminoris.aestheticstairs.block;
 import net.alminoris.aestheticstairs.AestheticStairs;
 import net.alminoris.aestheticstairs.block.custom.StairailBlock;
 import net.alminoris.aestheticstairs.block.custom.StaircaseBlock;
+import net.alminoris.aestheticstairs.item.ModItemGroups;
 import net.alminoris.aestheticstairs.item.ModItems;
 import net.alminoris.aestheticstairs.util.helper.BlockSetsHelper;
 import net.minecraft.world.item.BlockItem;
@@ -115,7 +116,7 @@ public class ModBlocks
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block)
     {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ModItemGroups.ASTAIRS_TAB)));
     }
 
     public static void register(IEventBus eventBus)

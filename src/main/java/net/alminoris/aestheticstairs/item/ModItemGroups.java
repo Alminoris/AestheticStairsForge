@@ -9,15 +9,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static net.alminoris.aestheticstairs.util.helper.BlockSetsHelper.*;
-import static net.alminoris.aestheticstairs.util.helper.BlockSetsHelper.NSS_WOOD_NAMES;
 
 public class ModItemGroups
 {
