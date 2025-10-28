@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:stone"
@@ -17,6 +16,5 @@
   "result": {
     "count": 3,
     "item": "aestheticstairs:staircase_stone"
-  },
-  "show_notification": true
+  }
 }
