@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "##"
+  ],
   "key": {
     "#": {
       "item": "minecraft:blackstone"
     }
   },
-  "pattern": [
-    "# ",
-    "##"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_stairs_blackstone"
+    "item": "aestheticstairs:small_stairs_blackstone",
+    "count": 3
   }
 }

@@ -1,5 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/#/",
+    "/#/"
+  ],
   "key": {
     "#": {
       "item": "minecraft:stripped_oak_log"
@@ -8,12 +12,8 @@
       "item": "minecraft:stick"
     }
   },
-  "pattern": [
-    "/#/",
-    "/#/"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstairs:stairail_oak"
+    "item": "aestheticstairs:stairail_oak",
+    "count": 4
   }
 }

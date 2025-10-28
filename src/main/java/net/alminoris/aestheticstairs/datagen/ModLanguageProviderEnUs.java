@@ -42,7 +42,7 @@ public class ModLanguageProviderEnUs extends LanguageProvider
             add("block." + AestheticStairs.MOD_ID + "." + path, displayName);
         }
 
-        add("itemgroup.astairstab","Aesthetic Stairs");
+        add("itemGroup.aestheticstairs.astairstab","Aesthetic Stairs");
     }
 
     public static String movePrefix(String input, String[] arr)

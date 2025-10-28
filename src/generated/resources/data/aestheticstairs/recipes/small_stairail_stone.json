@@ -1,5 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/#/"
+  ],
   "key": {
     "#": {
       "item": "minecraft:stone"
@@ -8,11 +11,8 @@
       "item": "minecraft:cobblestone"
     }
   },
-  "pattern": [
-    "/#/"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_stairail_stone"
+    "item": "aestheticstairs:small_stairail_stone",
+    "count": 3
   }
 }

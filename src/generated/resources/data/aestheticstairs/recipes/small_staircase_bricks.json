@@ -1,5 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "/#"
+  ],
   "key": {
     "#": {
       "item": "minecraft:bricks"
@@ -8,12 +12,8 @@
       "item": "minecraft:chiseled_stone_bricks"
     }
   },
-  "pattern": [
-    "# ",
-    "/#"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_staircase_bricks"
+    "item": "aestheticstairs:small_staircase_bricks",
+    "count": 3
   }
 }

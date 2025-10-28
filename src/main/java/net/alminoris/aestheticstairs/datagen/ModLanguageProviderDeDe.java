@@ -136,6 +136,6 @@ public class ModLanguageProviderDeDe extends LanguageProvider
             }
         }
 
-        add("itemgroup.astairstab","Aesthetic Stairs");
+        add("itemGroup.aestheticstairs.astairstab","Aesthetic Stairs");
     }
 }

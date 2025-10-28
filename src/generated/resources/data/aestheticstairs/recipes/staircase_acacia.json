@@ -1,5 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "/# ",
+    " /#"
+  ],
   "key": {
     "#": {
       "item": "minecraft:stripped_acacia_log"
@@ -8,13 +13,8 @@
       "item": "minecraft:stick"
     }
   },
-  "pattern": [
-    "#  ",
-    "/# ",
-    " /#"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:staircase_acacia"
+    "item": "aestheticstairs:staircase_acacia",
+    "count": 3
   }
 }

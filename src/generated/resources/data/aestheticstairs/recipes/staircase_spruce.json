@@ -1,5 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "/# ",
+    " /#"
+  ],
   "key": {
     "#": {
       "item": "minecraft:stripped_spruce_log"
@@ -8,13 +13,8 @@
       "item": "minecraft:stick"
     }
   },
-  "pattern": [
-    "#  ",
-    "/# ",
-    " /#"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:staircase_spruce"
+    "item": "aestheticstairs:staircase_spruce",
+    "count": 3
   }
 }

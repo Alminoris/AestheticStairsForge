@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "##"
+  ],
   "key": {
     "#": {
       "item": "minecraft:spruce_planks"
     }
   },
-  "pattern": [
-    "# ",
-    "##"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_stairs_spruce"
+    "item": "aestheticstairs:small_stairs_spruce",
+    "count": 3
   }
 }

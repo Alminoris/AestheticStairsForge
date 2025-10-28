@@ -1,7 +1,25 @@
 {
   "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "aestheticstairs:stairail_mangrove"
+    ]
+  },
   "criteria": {
+    "has_air": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:air"
+            ]
+          }
+        ]
+      }
+    },
     "has_stick": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -10,38 +28,20 @@
             ]
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_stripped_mangrove_log": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:stripped_mangrove_log"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
     },
     "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "aestheticstairs:stairail_mangrove"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      }
     }
   },
   "requirements": [
     [
-      "has_stripped_mangrove_log",
+      "has_air",
       "has_stick",
       "has_the_recipe"
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "aestheticstairs:stairail_mangrove"
-    ]
-  }
+  ]
 }

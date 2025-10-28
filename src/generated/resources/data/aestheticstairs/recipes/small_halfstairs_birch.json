@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    " #"
+  ],
   "key": {
     "#": {
       "item": "minecraft:birch_planks"
     }
   },
-  "pattern": [
-    "# ",
-    " #"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_halfstairs_birch"
+    "item": "aestheticstairs:small_halfstairs_birch",
+    "count": 3
   }
 }

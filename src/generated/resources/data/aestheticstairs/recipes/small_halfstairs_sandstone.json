@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    " #"
+  ],
   "key": {
     "#": {
       "item": "minecraft:sandstone"
     }
   },
-  "pattern": [
-    "# ",
-    " #"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_halfstairs_sandstone"
+    "item": "aestheticstairs:small_halfstairs_sandstone",
+    "count": 3
   }
 }

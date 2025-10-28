@@ -1,5 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/#/",
+    "/#/"
+  ],
   "key": {
     "#": {
       "item": "minecraft:basalt"
@@ -8,12 +12,8 @@
       "item": "minecraft:smooth_basalt"
     }
   },
-  "pattern": [
-    "/#/",
-    "/#/"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstairs:stairail_basalt_side"
+    "item": "aestheticstairs:stairail_basalt_side",
+    "count": 4
   }
 }

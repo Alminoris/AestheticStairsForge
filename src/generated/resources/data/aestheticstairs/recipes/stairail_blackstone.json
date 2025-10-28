@@ -1,5 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/#/",
+    "/#/"
+  ],
   "key": {
     "#": {
       "item": "minecraft:blackstone"
@@ -8,12 +12,8 @@
       "item": "minecraft:polished_blackstone"
     }
   },
-  "pattern": [
-    "/#/",
-    "/#/"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstairs:stairail_blackstone"
+    "item": "aestheticstairs:stairail_blackstone",
+    "count": 4
   }
 }

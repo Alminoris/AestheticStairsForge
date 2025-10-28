@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "##"
+  ],
   "key": {
     "#": {
       "item": "minecraft:warped_planks"
     }
   },
-  "pattern": [
-    "# ",
-    "##"
-  ],
   "result": {
-    "count": 3,
-    "item": "aestheticstairs:small_stairs_warped"
+    "item": "aestheticstairs:small_stairs_warped",
+    "count": 3
   }
 }
