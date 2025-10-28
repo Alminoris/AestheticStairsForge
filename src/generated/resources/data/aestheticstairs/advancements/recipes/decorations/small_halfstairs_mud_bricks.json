@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:small_halfstairs_mud_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

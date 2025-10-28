@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:small_halfstairs_crimson"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

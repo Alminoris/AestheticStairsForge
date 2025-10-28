@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstairs:stairail_jungle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

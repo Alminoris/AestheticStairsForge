@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstairs:small_staircase_birch"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

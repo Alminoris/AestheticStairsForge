@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:stairail_blackstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

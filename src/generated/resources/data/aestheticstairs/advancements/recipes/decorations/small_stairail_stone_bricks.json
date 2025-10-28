@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:small_stairail_stone_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

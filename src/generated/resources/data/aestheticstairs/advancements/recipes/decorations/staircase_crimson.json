@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstairs:staircase_crimson"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

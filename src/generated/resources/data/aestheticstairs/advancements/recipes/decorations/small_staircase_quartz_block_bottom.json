@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:small_staircase_quartz_block_bottom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

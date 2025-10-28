@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstairs:staircase_acacia"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

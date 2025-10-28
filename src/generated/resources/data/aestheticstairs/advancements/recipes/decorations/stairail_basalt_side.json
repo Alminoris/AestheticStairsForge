@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:stairail_basalt_side"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstairs:small_stairail_mangrove"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

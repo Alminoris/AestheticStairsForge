@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:small_halfstairs_dark_oak"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

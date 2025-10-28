@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:small_stairs_acacia"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

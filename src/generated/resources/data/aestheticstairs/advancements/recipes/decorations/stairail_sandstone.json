@@ -30,6 +30,5 @@
     "recipes": [
       "aestheticstairs:stairail_sandstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
