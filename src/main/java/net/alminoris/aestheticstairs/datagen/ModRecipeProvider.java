@@ -76,7 +76,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("/# ")
                     .pattern(" /#")
                     .unlockedBy(getHasName(block), has(block))
-                    .unlockedBy(getHasName(SECONDARY_STONES.get(name)), has(SECONDARY_STONES.get(name)))
                     .save(recipeExporter);
 
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRCASES.get(name).get(), 3)
@@ -85,7 +84,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("# ")
                     .pattern("/#")
                     .unlockedBy(getHasName(block), has(block))
-                    .unlockedBy(getHasName(SECONDARY_STONES.get(name)), has(SECONDARY_STONES.get(name)))
                     .save(recipeExporter);
 
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.STAIRAILS.get(name).get(), 4)
@@ -94,7 +92,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("/#/")
                     .pattern("/#/")
                     .unlockedBy(getHasName(block), has(block))
-                    .unlockedBy(getHasName(SECONDARY_STONES.get(name)), has(SECONDARY_STONES.get(name)))
                     .save(recipeExporter);
 
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRAILS.get(name).get(), 3)
@@ -102,7 +99,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .define('/', SECONDARY_STONES.get(name))
                     .pattern("/#/")
                     .unlockedBy(getHasName(block), has(block))
-                    .unlockedBy(getHasName(SECONDARY_STONES.get(name)), has(SECONDARY_STONES.get(name)))
                     .save(recipeExporter);
         }
 
