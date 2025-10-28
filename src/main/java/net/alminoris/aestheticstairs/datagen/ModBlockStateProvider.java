@@ -2,10 +2,11 @@ package net.alminoris.aestheticstairs.datagen;
 
 import net.alminoris.aestheticstairs.AestheticStairs;
 import net.alminoris.aestheticstairs.block.ModBlocks;
+import net.alminoris.aestheticstairs.item.ModItemGroups;
 import net.alminoris.aestheticstairs.util.helper.BlockSetsHelper;
 import net.alminoris.aestheticstairs.util.helper.ModJsonHelper;
 import net.alminoris.aestheticstairs.util.helper.ModJsonTemplates;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -34,7 +35,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         put("sandstone", "sandstone_bottom");
     }};
 
-    public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper)
+    public ModBlockStateProvider(DataGenerator output, ExistingFileHelper exFileHelper)
     {
         super(output, AestheticStairs.MOD_ID, exFileHelper);
     }
@@ -53,7 +54,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "minecraft:block/", name, name);
         }
 
-        for(String name : BlockSetsHelper.EXTRA_STONES_WF)
+        for(String name : ModItemGroups.EXTRA_STONES_WF)
         {
             registerStaircase( ModBlocks.STAIRCASES.get(name),"aestheticstairs:block/", "staircase_"+name, name, name.replace("block", "cobbled"));
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, name, name.replace("block", "cobbled"));
@@ -76,7 +77,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "minecraft:block/", name, name+"_planks");
         }
 
-        for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
+        for(String name : ModItemGroups.AN_WOOD_NAMES)
         {
             registerStaircase( ModBlocks.STAIRCASES.get(name),"aestheticstairs:block/", "staircase_"+name, "stripped_"+name+"_log", name+"_log");
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, "stripped_"+name+"_log", name+"_log");
@@ -87,7 +88,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "aestheticstairs:block/", name, name+"_planks");
         }
 
-        for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
+        for(String name : ModItemGroups.WF_WOOD_NAMES)
         {
             registerStaircase(ModBlocks.STAIRCASES.get(name), "aestheticstairs:block/", "staircase_"+name, "stripped_"+name+"_log", name+"_log");
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, "stripped_"+name+"_log", name+"_log");
@@ -98,7 +99,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "aestheticstairs:block/", name, name+"_planks");
         }
 
-        for(String name : BlockSetsHelper.ST_WOOD_NAMES)
+        for(String name : ModItemGroups.ST_WOOD_NAMES)
         {
             registerStaircase(ModBlocks.STAIRCASES.get(name), "aestheticstairs:block/", "staircase_"+name, "stripped_"+name+"_log", name+"_log");
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, "stripped_"+name+"_log", name+"_log");
@@ -109,7 +110,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "aestheticstairs:block/", name, name+"_planks");
         }
 
-        for(String name : BlockSetsHelper.WT_WOOD_NAMES)
+        for(String name : ModItemGroups.WT_WOOD_NAMES)
         {
             registerStaircase(ModBlocks.STAIRCASES.get(name), "aestheticstairs:block/", "staircase_"+name, "stripped_"+name+"_log", name+"_log");
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, "stripped_"+name+"_log", name+"_log");
@@ -120,7 +121,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "aestheticstairs:block/", name, name+"_planks");
         }
 
-        for(String name : BlockSetsHelper.MT_WOOD_NAMES)
+        for(String name : ModItemGroups.MT_WOOD_NAMES)
         {
             registerStaircase(ModBlocks.STAIRCASES.get(name), "aestheticstairs:block/", "staircase_"+name, "stripped_"+name+"_log", name+"_log");
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, "stripped_"+name+"_log", name+"_log");
@@ -131,7 +132,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             registerSmallStairs(ModBlocks.SMALL_STAIRS.get(name), ModBlocks.SMALL_HALFSTAIRS.get(name), "aestheticstairs:block/", name, name+"_planks");
         }
 
-        for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
+        for(String name : ModItemGroups.NSS_WOOD_NAMES)
         {
             registerStaircase(ModBlocks.STAIRCASES.get(name), "aestheticstairs:block/", "staircase_"+name, "stripped_"+name+"_log", name+"_log");
             registerSmallStaircase( ModBlocks.SMALL_STAIRCASES.get(name),"aestheticstairs:block/", "small_staircase_"+name, "stripped_"+name+"_log", name+"_log");

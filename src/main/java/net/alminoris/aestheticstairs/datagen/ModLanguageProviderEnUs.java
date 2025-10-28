@@ -2,7 +2,7 @@ package net.alminoris.aestheticstairs.datagen;
 
 import net.alminoris.aestheticstairs.AestheticStairs;
 import net.alminoris.aestheticstairs.util.helper.BlockSetsHelper;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class ModLanguageProviderEnUs extends LanguageProvider
 {
-    public ModLanguageProviderEnUs(PackOutput output)
+    public ModLanguageProviderEnUs(DataGenerator output)
     {
         super(output, AestheticStairs.MOD_ID, "en_us");
     }

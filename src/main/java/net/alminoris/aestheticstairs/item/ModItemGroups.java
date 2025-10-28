@@ -2,14 +2,10 @@ package net.alminoris.aestheticstairs.item;
 
 import net.alminoris.aestheticstairs.AestheticStairs;
 import net.alminoris.aestheticstairs.block.ModBlocks;
-import net.alminoris.aestheticstairs.util.helper.BlockSetsHelper;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -17,19 +13,85 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static net.alminoris.aestheticstairs.util.helper.BlockSetsHelper.*;
 import static net.alminoris.aestheticstairs.util.helper.BlockSetsHelper.NSS_WOOD_NAMES;
 
-@Mod.EventBusSubscriber(modid = AestheticStairs.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModItemGroups
 {
-    public static CreativeModeTab ASTAIRS_TAB;
+    public static List<String> WF_WOOD_NAMES = List.of("olive", "tamarisk", "western_serviceberry", "trembling_aspen", "cottonwood");
 
-    @SubscribeEvent
-    public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event)
+    public static List<String> AN_WOOD_NAMES = List.of("hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum",
+            "white_mulberry", "wild_cherry", "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper",
+            "bald_cypress", "thuja", "sequoia", "mountain_hemlock", "cryptomeria", "yew", "larch");
+
+    public static List<String> EXTRA_STONES_WF = List.of("dolomite_block", "saltmarsh_block", "loessic_marl_block", "loamy_marl_block", "fossil_marlstone_block", "limestone_block");
+
+    public static List<String> ST_WOOD_NAMES = List.of( "walnut", "silver_maple", "staghorn_sumac", "silverberry");
+
+    public static List<String> WT_WOOD_NAMES = List.of("willow", "poplar", "alder", "aspen");
+
+    public static List<String> MT_WOOD_NAMES = List.of("azalea", "apple", "scots_pine", "swamp_oak");
+
+    public static List<String> NSS_WOOD_NAMES = List.of("aspen_nss", "cedar_nss", "coconut_nss", "cypress_nss", "fir_nss", "ghaf_nss",
+            "larch_nss", "mahogany_nss", "maple_nss", "olive_nss", "palo_verde_nss", "redwood_nss", "saxaul_nss", "sugi_nss", "willow_nss", "wisteria_nss");
+
+    public static final CreativeModeTab ASTAIRS_TAB = new CreativeModeTab(AestheticStairs.MOD_ID + ".astairstab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.STAIRCASES.get("oak").get().asItem());
+        }
+
+        @Override
+        public Component getDisplayName() {
+            return Component.translatable("itemGroup." + AestheticStairs.MOD_ID + ".astairstab");
+        }
+    };
+
+    public static void registerModItemGroups()
     {
-        ASTAIRS_TAB = event.registerCreativeModeTab(ResourceLocation.fromNamespaceAndPath(AestheticStairs.MOD_ID, "astairstab"),
-                builder -> builder.icon(() -> new ItemStack(ModBlocks.STAIRCASES.get("oak").get().asItem()))
-                        .title(Component.translatable("itemgroup.astairstab")));
+        WF_WOOD_NAMES = new ArrayList<>();
+
+        AN_WOOD_NAMES = new ArrayList<>();
+
+        EXTRA_STONES_WF = new ArrayList<>();
+
+        ST_WOOD_NAMES = new ArrayList<>();
+
+        WT_WOOD_NAMES = new ArrayList<>();
+
+        MT_WOOD_NAMES = new ArrayList<>();
+
+        NSS_WOOD_NAMES = new ArrayList<>();
+
+        if (ModList.get().isLoaded("arborealnature"))
+        {
+            AN_WOOD_NAMES = List.of("hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum",
+                    "white_mulberry", "wild_cherry", "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper");
+        }
+        if (ModList.get().isLoaded("wildfields"))
+        {
+            WF_WOOD_NAMES = List.of("olive", "tamarisk", "western_serviceberry");
+            EXTRA_STONES_WF = List.of("dolomite_block", "saltmarsh_block", "loessic_marl_block", "loamy_marl_block", "fossil_marlstone_block");
+        }
+        if (ModList.get().isLoaded("silverwoodtrees"))
+        {
+            ST_WOOD_NAMES = List.of( "walnut", "silver_maple", "staghorn_sumac", "silverberry");
+        }
+        if (ModList.get().isLoaded("whisperleaftrees"))
+        {
+            WT_WOOD_NAMES = List.of("willow", "poplar", "alder", "aspen");
+        }
+        if (ModList.get().isLoaded("missingtrees"))
+        {
+            MT_WOOD_NAMES = List.of("azalea", "apple", "scots_pine", "swamp_oak");
+        }
+        if (ModList.get().isLoaded("natures_spirit"))
+        {
+            NSS_WOOD_NAMES = List.of("aspen_nss", "cedar_nss", "coconut_nss", "cypress_nss", "fir_nss", "ghaf_nss",
+                    "larch_nss", "mahogany_nss", "maple_nss", "olive_nss", "palo_verde_nss", "redwood_nss", "saxaul_nss", "sugi_nss", "willow_nss", "wisteria_nss");
+        }
     }
 }

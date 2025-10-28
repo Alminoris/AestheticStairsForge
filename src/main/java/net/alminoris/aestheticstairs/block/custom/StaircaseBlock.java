@@ -27,6 +27,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.Tags;
 
 
 import javax.swing.text.html.BlockView;
@@ -153,7 +154,7 @@ public class StaircaseBlock extends YAxisRotatedBlock
                 return InteractionResult.SUCCESS;
             }
 
-            if (currentRailed && stack.is(ItemTags.AXES))
+            if (currentRailed && stack.is(Tags.Items.TOOLS_AXES))
             {
                 if (stack.getDamageValue() < stack.getMaxDamage() - 1)
                     stack.setDamageValue(stack.getDamageValue() + 1);

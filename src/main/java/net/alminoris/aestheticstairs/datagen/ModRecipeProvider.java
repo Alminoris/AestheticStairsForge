@@ -1,14 +1,12 @@
 package net.alminoris.aestheticstairs.datagen;
 
 import net.alminoris.aestheticstairs.block.ModBlocks;
+import net.alminoris.aestheticstairs.item.ModItemGroups;
 import net.alminoris.aestheticstairs.item.ModItems;
 import net.alminoris.aestheticstairs.util.helper.BlockSetsHelper;
 import net.alminoris.aestheticstairs.util.helper.ModJsonHelper;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -42,34 +40,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         put("sandstone", Blocks.SANDSTONE);
     }};
     
-    public ModRecipeProvider(PackOutput pOutput)
+    public ModRecipeProvider(DataGenerator pOutput)
     {
         super(pOutput);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> recipeExporter)
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> recipeExporter)
     {
         for(String name : BlockSetsHelper.STONES)
         {
-            Block block = BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(name.equals("basalt_side") ? "basalt" :
+            Block block = ForgeRegistries.BLOCKS.getValue(ResourceLocation.withDefaultNamespace(name.equals("basalt_side") ? "basalt" :
                     (name.equals("quartz_block_bottom") ? "quartz_block" : name)));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRS.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_STAIRS.get(name).get(), 3)
                     .define('#', block)
                     .pattern("# ")
                     .pattern("##")
                     .unlockedBy(getHasName(block), has(block))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_HALFSTAIRS.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_HALFSTAIRS.get(name).get(), 3)
                     .define('#', block)
                     .pattern("# ")
                     .pattern(" #")
                     .unlockedBy(getHasName(block), has(block))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.STAIRCASES.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.STAIRCASES.get(name).get(), 3)
                     .define('#', block)
                     .define('/', SECONDARY_STONES.get(name))
                     .pattern("#  ")
@@ -78,7 +76,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(block), has(block))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRCASES.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_STAIRCASES.get(name).get(), 3)
                     .define('#', block)
                     .define('/', SECONDARY_STONES.get(name))
                     .pattern("# ")
@@ -86,7 +84,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(block), has(block))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.STAIRAILS.get(name).get(), 4)
+            ShapedRecipeBuilder.shaped(ModBlocks.STAIRAILS.get(name).get(), 4)
                     .define('#', block)
                     .define('/', SECONDARY_STONES.get(name))
                     .pattern("/#/")
@@ -94,7 +92,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(block), has(block))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRAILS.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_STAIRAILS.get(name).get(), 3)
                     .define('#', block)
                     .define('/', SECONDARY_STONES.get(name))
                     .pattern("/#/")
@@ -102,7 +100,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(recipeExporter);
         }
 
-        for(String name : BlockSetsHelper.EXTRA_STONES_WF)
+        for(String name : ModItemGroups.EXTRA_STONES_WF)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "wildfields:" + name,
                     "\"#  \",", "\"## \"", "");
@@ -126,24 +124,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         for(String name : BlockSetsHelper.WOODS)
         {
             String blockName = (name.equals("crimson") || name.equals("warped")) ? "stem" : (name.equals("bamboo") ? "block" : "log");
-            Block block = BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace("stripped_"+name+"_"+blockName));
-            Block block1 = BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(name+"_planks"));
+            Block block = ForgeRegistries.BLOCKS.getValue(ResourceLocation.withDefaultNamespace("stripped_"+name+"_"+blockName));
+            Block block1 = ForgeRegistries.BLOCKS.getValue(ResourceLocation.withDefaultNamespace(name+"_planks"));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRS.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_STAIRS.get(name).get(), 3)
                     .define('#', block1)
                     .pattern("# ")
                     .pattern("##")
                     .unlockedBy(getHasName(block1), has(block1))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_HALFSTAIRS.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_HALFSTAIRS.get(name).get(), 3)
                     .define('#', block1)
                     .pattern("# ")
                     .pattern(" #")
                     .unlockedBy(getHasName(block1), has(block1))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.STAIRCASES.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.STAIRCASES.get(name).get(), 3)
                     .define('#', block)
                     .define('/', Items.STICK)
                     .pattern("#  ")
@@ -153,7 +151,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRCASES.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_STAIRCASES.get(name).get(), 3)
                     .define('#', block)
                     .define('/', Items.STICK)
                     .pattern("# ")
@@ -162,7 +160,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.STAIRAILS.get(name).get(), 4)
+            ShapedRecipeBuilder.shaped(ModBlocks.STAIRAILS.get(name).get(), 4)
                     .define('#', block)
                     .define('/', Items.STICK)
                     .pattern("/#/")
@@ -171,7 +169,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
                     .save(recipeExporter);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_STAIRAILS.get(name).get(), 3)
+            ShapedRecipeBuilder.shaped(ModBlocks.SMALL_STAIRAILS.get(name).get(), 3)
                     .define('#', block)
                     .define('/', Items.STICK)
                     .pattern("/#/")
@@ -180,7 +178,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(recipeExporter);
         }
 
-        for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
+        for(String name : ModItemGroups.AN_WOOD_NAMES)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "arborealnature:" + name + "_planks",
                     "\"#  \",", "\"## \"", "");
@@ -201,7 +199,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     "\"/#/\"", "", "");
         }
 
-        for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
+        for(String name : ModItemGroups.WF_WOOD_NAMES)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "wildfields:" + name + "_planks",
                     "\"#  \",", "\"## \"", "");
@@ -222,7 +220,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     "\"/#/\"", "", "");
         }
 
-        for(String name : BlockSetsHelper.ST_WOOD_NAMES)
+        for(String name : ModItemGroups.ST_WOOD_NAMES)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "silverwoodtrees:" + name + "_planks",
                     "\"#  \",", "\"## \"", "");
@@ -243,7 +241,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     "\"/#/\"", "", "");
         }
 
-        for(String name : BlockSetsHelper.WT_WOOD_NAMES)
+        for(String name : ModItemGroups.WT_WOOD_NAMES)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "whisperleaftrees:" + name + "_planks",
                     "\"#  \",", "\"## \"", "");
@@ -264,7 +262,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     "\"/#/\"", "", "");
         }
 
-        for(String name : BlockSetsHelper.MT_WOOD_NAMES)
+        for(String name : ModItemGroups.MT_WOOD_NAMES)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "missingtrees:" + name + "_planks",
                     "\"#  \",", "\"## \"", "");
@@ -285,7 +283,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     "\"/#/\"", "", "");
         }
 
-        for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
+        for(String name : ModItemGroups.NSS_WOOD_NAMES)
         {
             ModJsonHelper.createShapedRecipe("small_stairs_"+name, "3", "natures_spirit:" + name.replace("_nss", "") + "_planks",
                     "\"#  \",", "\"## \"", "");
